@@ -1,0 +1,19 @@
+{
+  "firstNameValue": "Carmen",
+  "lastNameValue": "Klimek",
+  "emailValue": "carmen.gerendi@gmail.com",
+  "genderValue": "Female",
+  "mobileValue": "7778388822",
+  "subjectValues": [
+    "Arts"
+  , "Accounting",
+    "Maths"
+  ],
+  "hobbiesValues": ["Sports", "Reading", "Music"],
+  "pictureValue": "src/test/resources/Screenshot 2025-01-30 at 14.45.27.png",
+  "addressValue": "Strada Petre Ispirescu, nr 2, Bistrita",
+  "stateValue": "NCR",
+  "cityValue": "Noida",
+ "expectedMessage": "Thanks for submitting the form"
+
+}
