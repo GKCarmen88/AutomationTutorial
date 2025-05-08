@@ -73,47 +73,44 @@ public class PracticeFormPage extends BasePage {
         elementsHelper.clickJSlocator(PracticeFormLocators.submitButton);
     }
 
-    public void validateEntireContent(String expectedMessage, String firstNameValue, String lastNameValue,
-                                      String emailValue,String genderValue, String mobileValue,
-                                     List<String> subjectValues,List<String> hobbiesValues,
-                                      String uploadFile, String addressValue,String stateValue, String cityValue  ){
+    public void validateEntireContent(PracticeFormModel testData){
 
 
-        elementsHelper.validateElementText(PracticeFormLocators.thankYouElement, expectedMessage);
+        elementsHelper.validateElementText(PracticeFormLocators.thankYouElement, testData.getExpectedMessage());
 
         List<WebElement> tabelContentList = elementsHelper.getListElements(PracticeFormLocators.tableContentListLocator);
 
         elementsHelper.validateElementContainsText(tabelContentList.get(0),"Student Name");
-        elementsHelper.validateElementContainsText(tabelContentList.get(0), firstNameValue+' '+lastNameValue);
+        elementsHelper.validateElementContainsText(tabelContentList.get(0), testData.getFirstNameValue()+' '+ testData.getLastNameValue());
 
         elementsHelper.validateElementContainsText(tabelContentList.get(1),"Student Email");
-        elementsHelper.validateElementContainsText(tabelContentList.get(1),emailValue);
+        elementsHelper.validateElementContainsText(tabelContentList.get(1), testData.getEmailValue());
 
         elementsHelper.validateElementContainsText(tabelContentList.get(2), "Gender");
-        elementsHelper.validateElementContainsText(tabelContentList.get(2),genderValue);
+        elementsHelper.validateElementContainsText(tabelContentList.get(2), testData.getGenderValue());
 
         elementsHelper.validateElementContainsText(tabelContentList.get(3),"Mobile");
-        elementsHelper.validateElementContainsText(tabelContentList.get(3), mobileValue);
+        elementsHelper.validateElementContainsText(tabelContentList.get(3), testData.getMobileValue());
 
         elementsHelper.validateElementContainsText(tabelContentList.get(5),"Subjects" );
-        String subjectValue = String.join(", ", subjectValues);
+        String subjectValue = String.join(", ", testData.getSubjectValues());
         elementsHelper.validateElementContainsText(tabelContentList.get(5),subjectValue);
 
         elementsHelper.validateElementContainsText(tabelContentList.get(6),"Hobbies");
-        String hobbyValue = String.join(", ", hobbiesValues);
+        String hobbyValue = String.join(", ", testData.getHobbiesValues());
         elementsHelper.validateElementContainsText(tabelContentList.get(6),hobbyValue);
 
         elementsHelper.validateElementContainsText(tabelContentList.get(7),"Picture");
-        File file = new File(uploadFile);
+        File file = new File(testData.getPictureValue());
         String fileName = file.getName();
         elementsHelper.validateElementContainsText(tabelContentList.get(7),fileName);
 
         elementsHelper.validateElementContainsText(tabelContentList.get(8),"Address");
-        elementsHelper.validateElementContainsText(tabelContentList.get(8),addressValue);
+        elementsHelper.validateElementContainsText(tabelContentList.get(8), testData.getAddressValue());
 
 
         elementsHelper.validateElementContainsText(tabelContentList.get(9),"State and City");
-        elementsHelper.validateElementContainsText(tabelContentList.get(9),stateValue+' '+cityValue);
+        elementsHelper.validateElementContainsText(tabelContentList.get(9), testData.getStateValue() + ' ' + testData.getCityValue());
 
 
 

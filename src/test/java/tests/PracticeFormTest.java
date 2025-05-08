@@ -25,13 +25,9 @@ public class PracticeFormTest extends SharedData {
 
 
          PracticeFormPage practiceFormPage = new PracticeFormPage(getDriver());
-         practiceFormPage.populateEntireForm(firstNameValue, lastNameValue,
-                 emailValue, genderValue, mobileValue, subjectValues, hobbiesValues,
-                 pictureValue, addressValue, stateValue, cityValue);
+         practiceFormPage.populateEntireForm(testData);
 
-         practiceFormPage.validateEntireContent(expectedMessage,firstNameValue,lastNameValue,
-                 emailValue,genderValue,mobileValue,subjectValues,
-                 hobbiesValues,pictureValue,addressValue,stateValue,cityValue);
+         practiceFormPage.validateEntireContent(testData);
 
      }
 
