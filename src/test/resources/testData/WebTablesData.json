@@ -1,0 +1,15 @@
+{
+  "firstNameValue":  "Carmen",
+  "lastNameValue": "Gerendi-KLimek",
+  "emailValue": "carmen.gerendi@gmail.com",
+   "ageValue" : "36",
+   "salaryValue" : "20000",
+   "departmentValue": "QA",
+
+   "editSalaryValue": "2800",
+   "editDepartmentValue": "HR",
+   "editAgeValue": "37",
+   "newTableSize": 4,
+   "actualTableSize": 3
+
+}

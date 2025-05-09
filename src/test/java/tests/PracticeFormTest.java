@@ -7,9 +7,6 @@ import pages.PracticeFormPage;
 import sharedData.SharedData;
 import suites.TestSuite;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class PracticeFormTest extends SharedData {
 
 

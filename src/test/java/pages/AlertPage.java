@@ -1,5 +1,6 @@
 package pages;
 
+import modelObject.AlertTableModel;
 import org.openqa.selenium.WebDriver;
 import pageLocators.AlertsLocators;
 
@@ -25,9 +26,9 @@ public class AlertPage extends BasePage{
         alertsHelper.acceptAlert();
     }
 
-    public void interactWithValueAlert(String value){
+    public void interactWithValueAlert(AlertTableModel testData) {
         elementsHelper.clickLocator(AlertsLocators.alertTextElement);
-        alertsHelper.fillTextAlert(value);
+        alertsHelper.fillTextAlert(testData.getPromptData());
     }
 
 }
