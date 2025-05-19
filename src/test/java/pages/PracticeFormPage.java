@@ -2,6 +2,7 @@ package pages;
 
 import loggerUtility.LoggerUtility;
 import modelObject.PracticeFormModel;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -71,6 +72,13 @@ public class PracticeFormPage extends BasePage {
         elementsHelper.fillLocator(PracticeFormLocators.addressElement, testData.getAddressValue());
         LoggerUtility.infoLog("The User fills Address with value: " + testData.getAddressValue());
 
+        // Scroll la elementul State ca să fie vizibil (nu blocat de ad)
+       // WebElement element = driver.findElement(PracticeFormLocators.stateElement);
+       // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        //try {
+        //    Thread.sleep(500); // pauză mică, opțională
+       // } catch (InterruptedException e) {
+        //    e.printStackTrace();}
 
         elementsHelper.clickJSlocator(PracticeFormLocators.stateElement);
         elementsHelper.fillPressLocator(PracticeFormLocators.stateInputElement, testData.getStateValue(), Keys.ENTER);
