@@ -15,7 +15,7 @@ public class WindowPage extends BasePage {
 
     public void interactionWithTab(){
         LoggerUtility.infoLog("Starting interaction with new Tab.");
-        elementsHelper.clickLocator(TabWindowLocators.newTabElement);
+        elementsHelper.clickJSlocator(TabWindowLocators.newTabElement);
         LoggerUtility.infoLog("User click on new Tab. ");
         System.out.println("URL-ul curent este: "+driver.getCurrentUrl());
         LoggerUtility.infoLog("Current URL after clicking new Tab: " + driver.getCurrentUrl());
@@ -33,7 +33,7 @@ public class WindowPage extends BasePage {
     }
 
     public void interactionWithWindow(){
-        elementsHelper.clickLocator(TabWindowLocators.newWindowElement);
+        elementsHelper.clickJSlocator(TabWindowLocators.newWindowElement);
         LoggerUtility.infoLog("User clicked on new Window.");
         System.out.println("URL-ul curent este: "+driver.getCurrentUrl());
         LoggerUtility.infoLog("Current URL after clicking new Window: " + driver.getCurrentUrl());
