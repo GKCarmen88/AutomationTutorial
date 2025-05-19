@@ -5,13 +5,15 @@ import org.testng.annotations.Test;
 import pages.AlertPage;
 import pages.IndexPage;
 import sharedData.SharedData;
+import suites.TestCaseSuite;
 import suites.TestSuite;
 
 public class AlerteTest extends SharedData {
 
 
 
-    @Test (groups = {TestSuite.REGRESSION_SUITE, TestSuite.ALERT_FRAME_SUITE})
+    @Test (groups = {TestSuite.REGRESSION_SUITE, TestSuite.ALERT_FRAME_SUITE,
+            TestCaseSuite.TICKET_123, TestCaseSuite.TC_457, TestCaseSuite.TC_459})
     public void metodaTest() {
 
 

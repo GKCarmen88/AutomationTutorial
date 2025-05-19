@@ -1,7 +1,5 @@
 package pages;
 
-import helperMethods.ElementsHelper;
-import helperMethods.TabHelper;
 import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import pageLocators.TabWindowLocators;

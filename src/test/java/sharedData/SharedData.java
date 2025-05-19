@@ -15,7 +15,7 @@ public class SharedData {
 
     //Inainte de fiecare metoda de test se executa secventa
 
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void prepareEnvironment(){
         testName = this.getClass().getSimpleName();
         LoggerUtility.startTest(testName);
@@ -30,7 +30,7 @@ public class SharedData {
 
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void clearEnvironment(){
         driver.quit();
         LoggerUtility.finishTest(testName);
