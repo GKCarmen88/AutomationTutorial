@@ -20,11 +20,16 @@ public class SharedData {
     public void prepareEnvironment(){
         testName = this.getClass().getSimpleName();
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
-        driver = new ChromeDriver(options); //deschidem un browser
+        String remoteEnv = System.getProperty("remote"); //returneaza acel false dar sub forma de string
+        if (Boolean.parseBoolean(remoteEnv)){
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");
+            driver = new ChromeDriver(options); //deschidem un browser
+        } else {
+            driver = new ChromeDriver();
+        }
 
-        //accesam pagian web
+        //accesam pagina web
         driver.get("https://demoqa.com");
         //facem browserul in modul maximize
         driver.manage().window().maximize();
