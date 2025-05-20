@@ -28,7 +28,7 @@ public class SharedData {
         driver.get("https://demoqa.com");
         //facem browserul in modul maximize
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
         LoggerUtility.startTest(testName);
 
 
