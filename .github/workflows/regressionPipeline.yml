@@ -9,8 +9,14 @@
 name: Regression Pipeline
 
 on:
-  push:
-    branches: [ "main","master" ]
+  workflow_dispatch:
+    inputs:
+      workers:
+        description: 'Specify number of workers(1-4): '
+        required: true
+        default: 2
+        type: number
+
 
 jobs:
   build:
@@ -27,7 +33,7 @@ jobs:
         cache: maven
         
     - name: Run Automation Test
-      run: mvn clean install -Dremote=true
+      run: mvn clean install -Dremote=true -Dgroups=@regression -Dthreads=${{ github.event.inputs.workers }}
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
